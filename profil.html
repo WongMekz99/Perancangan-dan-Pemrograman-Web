@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Veryandra Putra</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f8f8f8;
+            color: #333333;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        .profile-page {
+            width: min(1400px, calc(100% - 48px));
+            min-height: 470px;
+            margin: 16px auto;
+            background: #ffffff;
+        }
+
+        .page {
+            padding: 36px 40px 44px;
+        }
+
+        .profile-title {
+            margin: 0;
+            padding: 30px 36px;
+            border-radius: 5px;
+            background: #c90000;
+            color: #ffffff;
+            font-size: 36px;
+        }
+
+        .page > header {
+            margin: -36px -40px 0;
+        }
+
+        .navigation {
+            margin-top: 0;
+            padding: 16px 36px;
+            background: #fbe8e8;
+            color: #c90000;
+            font-size: 18px;
+        }
+
+        .navigation a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .about {
+            display: flex;
+            gap: 36px;
+            margin-top: 32px;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 220px;
+            height: 220px;
+            border-radius: 9px;
+            background: #c9d8ec;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            margin: 7px 0 16px;
+            font-size: 26px;
+        }
+
+        .about-content p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .schedule {
+            margin-top: 42px;
+        }
+
+        .hobbies {
+            margin-top: 42px;
+        }
+
+        .hobbies h2 {
+            margin: 0 0 16px;
+            font-size: 26px;
+        }
+
+        .hobbies p {
+            margin: 0 0 16px;
+        }
+
+        .hobbies ul {
+            margin: 0;
+            padding-left: 24px;
+        }
+
+        .hobbies li {
+            margin-bottom: 8px;
+        }
+
+        .hobbies li:last-child {
+            margin-bottom: 0;
+        }
+
+        .schedule h2 {
+            margin: 0 0 16px;
+            font-size: 26px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            padding: 16px 18px;
+            border: 1px solid #d8dde7;
+            text-align: left;
+        }
+
+        th {
+            border-right: 2px solid #ffffff;
+            background: #2167b6;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        th:last-child {
+            border-right: 0;
+        }
+
+        th:first-child,
+        td:first-child {
+            width: 22%;
+        }
+
+        th:last-child,
+        td:last-child {
+            width: 21%;
+        }
+
+        td {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        tfoot {
+            background: #f7f9fc;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 18px;
+            max-width: 760px;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            min-width: 140px;
+            border-radius: 6px;
+            padding: 14px 22px;
+            background: #c90000;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .github-link:hover {
+            background: #111111;
+        }
+
+        .contact-form label {
+            display: grid;
+            gap: 6px;
+            font-weight: 700;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            border: 1px solid #bdc5d1;
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: #333333;
+            font: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        #form-message {
+            min-height: 20px;
+            margin: 12px 0 0;
+            color: #c90000;
+            font-weight: 700;
+        }
+
+        #toggle-schedule {
+            border: 0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            background: #2167b6;
+            color: #ffffff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+        }
+
+        #toggle-schedule:hover,
+        .contact-form button:hover {
+            background: #174d8a;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: 0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            background: #c90000;
+            color: #ffffff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+        }
+
+        .footer {
+            padding: 18px 30px;
+            background: #292929;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 440px) {
+            .page {
+                padding: 12px;
+            }
+
+            .page > header {
+                margin: -12px -12px 0;
+            }
+
+            .about {
+                gap: 12px;
+            }
+
+            .photo-placeholder {
+                flex-basis: 105px;
+                height: 120px;
+            }
+
+            .footer {
+                margin-top: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="profile-page">
+        <div class="page">
+            <header>
+                <h1 class="profile-title">Veryandra Putra</h1>
+                <nav class="navigation" aria-label="Navigasi profil">
+                    <a href="#tentang">Tentang</a> ·
+                    <a href="#hobi">Hobi</a> ·
+                    <a href="#jadwal">Jadwal</a> ·
+                    <a href="#kontak">Kontak</a>
+                </nav>
+            </header>
+
+            <section class="about" id="tentang" aria-labelledby="about-title">
+                <img
+                    class="photo-placeholder"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' fill='%23c9d8ec'/%3E%3Ccircle cx='180' cy='130' r='58' fill='%23849cc2'/%3E%3Cpath d='M74 315c16-68 63-104 106-104s90 36 106 104' fill='%23849cc2'/%3E%3C/svg%3E"
+                    alt="Ilustrasi foto profil Veryandra Putra"
+                >
+                <div class="about-content">
+                    <h2 id="about-title">Tentang Saya</h2>
+                    <p>Mahasiswa RPL yang suka belajar pemrograman web dan membuat aplikasi yang user-friendly.</p>
+                </div>
+            </section>
+
+            <section class="hobbies" id="hobi" aria-labelledby="hobbies-title">
+                <h2 id="hobbies-title">Hobi Saya</h2>
+                <p>Di waktu luang, saya suka melakukan beberapa kegiatan berikut:</p>
+                <ul>
+                    <li>Membuat website sederhana</li>
+                    <li>Membaca artikel teknologi</li>
+                    <li>Bermain futsal bersama teman</li>
+                    <li>Mendengarkan musik</li>
+                </ul>
+            </section>
+
+            <section class="schedule" id="jadwal" aria-labelledby="schedule-title">
+                <h2 id="schedule-title">Jadwal Kuliah</h2>
+                <button type="button" id="toggle-schedule">Sembunyikan Tabel</button>
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Mata Kuliah</th>
+                            <th>Jam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senin</td>
+                            <td>Pemrograman Web</td>
+                            <td>08.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Selasa</td>
+                            <td>Manajemen Proyek</td>
+                            <td>08.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rabu</td>
+                            <td>Basis Data</td>
+                            <td>10.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="profile-links" aria-labelledby="profile-links-title">
+                <h2 id="profile-links-title">Tautan Profil</h2>
+                <p>Kunjungi tautan berikut untuk melihat profil profesional dan proyek.</p>
+                <a class="github-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </section>
+
+            <section id="kontak" aria-labelledby="contact-title">
+                <h2 id="contact-title">Kontak Saya</h2>
+                <form class="contact-form" action="#" method="post">
+                    <label for="nama">
+                        Nama
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama">
+                    </label>
+
+                    <label for="email">
+                        Email
+                        <input type="email" id="email" name="email" placeholder="nama@email.com">
+                    </label>
+
+                    <label for="pesan">
+                        Pesan
+                        <textarea id="pesan" name="pesan" placeholder="Tulis pesanmu di sini" required></textarea>
+                    </label>
+
+                    <button type="submit">Kirim</button>
+                    <p id="form-message" role="alert" aria-live="polite"></p>
+                </form>
+            </section>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 Veryandra</p>
+        </footer>
+    </main>
+
+    <script>
+        const scheduleButton = document.querySelector('#toggle-schedule');
+        const scheduleTable = document.querySelector('#schedule-table');
+        const contactForm = document.querySelector('.contact-form');
+        const formMessage = document.querySelector('#form-message');
+        const nameInput = document.querySelector('#nama');
+        const emailInput = document.querySelector('#email');
+
+        scheduleButton.addEventListener('click', () => {
+            const isHidden = scheduleTable.hidden;
+            scheduleTable.hidden = !isHidden;
+            scheduleButton.textContent = isHidden ? 'Sembunyikan Jadwal' : 'Tampilkan Jadwal';
+            scheduleButton.setAttribute('aria-expanded', String(isHidden));
+        });
+
+        contactForm.addEventListener('submit', (event) => {
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const errors = [];
+
+            formMessage.style.color = '#c90000';
+
+            if (!name) {
+                errors.push('Nama wajib diisi.');
+            } else if (!/^[A-Za-z ]+$/.test(name)) {
+                errors.push('Nama hanya boleh berisi huruf dan spasi.');
+            }
+
+            if (!email) {
+                errors.push('Email wajib diisi.');
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errors.push('Format email belum benar.');
+            }
+
+            if (errors.length > 0) {
+                event.preventDefault();
+                formMessage.textContent = errors.join(' ');
+                return;
+            }
+
+            event.preventDefault();
+            formMessage.textContent = 'Pesan berhasil dikirim.';
+            formMessage.style.color = '#287a3d';
+            contactForm.reset();
+        });
+
+    </script>
+</body>
+</html>
