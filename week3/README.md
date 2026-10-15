@@ -1,8 +1,7 @@
 # Tugas Praktikum Web - Week 3
 
 **Nama:** Veryandra Putra  
-**NIM:** (Masukkan NIM kamu)  
-**Kelas:** (Masukkan Kelas kamu)
+**NIM:** 103082400042
 
 ---
 
