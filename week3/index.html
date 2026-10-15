@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Aplikasi Catatan Tugas</h1>
+            <p class="subtitle">contoh javascript</p>
+        </header>
+
+        <form id="todo-form">
+            <input
+            type="text"
+            id="todo-input"
+            placeholder="Tulis kegiatan baru di sini"
+            autocomplete="off">
+            
+            <button type="submit" id="add-btn">Tambah</button>
+        </form>
+
+        <div class="status-bar" id="status-bar">
+            <span>Total: <strong id="total-count">0</strong></span>
+            <span>Selesai: <strong id="completed-count">0</strong></span>
+        </div>
+
+        <ul id="todo-list"></ul>
+
+        <p id="empty-message" class="empty-message">Belum ada tugas, tambahkan tugas baru!</p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
