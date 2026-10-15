@@ -1,13 +1,7 @@
 # Tugas Praktikum Web - Week 4 (React)
 
 **Nama:** Veryandra Putra  
-**NIM:** (Masukkan NIM kamu)  
-**Kelas:** (Masukkan Kelas kamu)
-
----
-
-### Deskripsi Tugas
-(Jelaskan singkat apa yang dibuat di week 4, misalnya: "Membuat komponen daftar mahasiswa menggunakan React dan Vite").
+**NIM:** (103082400042)  
 
 ---
 
